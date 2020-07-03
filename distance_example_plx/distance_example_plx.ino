@@ -22,7 +22,7 @@ void loop() {
 
   count ++;
   Serial.print("DATA, TIME, ");
-  Serial.print(count*0.1);
+  Serial.print(count*1);
   Serial.print(",");
   Serial.println(distance);
 
