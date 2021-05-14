@@ -2,7 +2,6 @@
 #define PIN 6 
 #define NUMPIXELS 30
 #define BRIGHTNESS 200
-#define DELAYVAL 500
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 int echoPin = 12;
