@@ -31,7 +31,7 @@ void loop() {
     pixels.setPixelColor(i, pixels.Color(255, 0, 0));
     pixels.show();
   }}
-  else if (distance < 20{
+  else if (distance < 20){
     for(int i=0; i<NUMPIXELS; i++) { 
     pixels.setPixelColor(i, pixels.Color(0, 255, 0));
     pixels.show();
