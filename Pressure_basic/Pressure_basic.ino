@@ -7,7 +7,6 @@ Vernier.autoID(); //identify the sensor being used
 }
 
 void loop() { //code in which the valve opens when the pressure drops below 0.25atm
-count ++;
 float Pressure = Vernier.readSensor()/103.325; // convert pressure units from kPa to atm
 Serial.print("Pressure : "); //count the time in 0.5 second intervals
 Serial.print(Pressure);
