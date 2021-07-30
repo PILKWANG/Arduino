@@ -3,7 +3,7 @@ import speech_recognition as sr
 import time
 import threading
 
-arduino = serial.Serial('COM6', 9600)
+arduino = serial.Serial('COM3', 9600)
 
 
 def thread_run():

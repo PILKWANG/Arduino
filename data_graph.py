@@ -4,7 +4,7 @@
 import matplotlib.pyplot as plt
 import serial
 
-ser = serial.Serial('com6', 9600)
+ser = serial.Serial('com4', 9600)
 
 plt.ion()
 
