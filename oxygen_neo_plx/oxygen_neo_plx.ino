@@ -31,9 +31,9 @@ void loop()
   Serial.println(oxygenData);
   delay(300);
 
-  if (oxygenData < 25){
+  if (oxygenData < 15){
     for(int i=0; i<NUMPIXELS; i++) { 
-    pixels.setPixelColor(i, pixels.Color(0, 255, 0));
+    pixels.setPixelColor(i, pixels.Color(255, 0, 0));
     pixels.show();
   }}
   else if (oxygenData < 18){
@@ -44,7 +44,7 @@ void loop()
   else
   {
     for(int i=0; i<NUMPIXELS; i++) { 
-    pixels.setPixelColor(i, pixels.Color(255, 0, 0));
+    pixels.setPixelColor(i, pixels.Color(0, 255, 0));
     pixels.show();
   }}
 }
