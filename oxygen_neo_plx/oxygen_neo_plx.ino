@@ -14,6 +14,8 @@ int count=0;
 void setup()
 {
   Serial.begin(9600);
+  pixels.begin();
+  pixels.setBrightness(BRIGHTNESS);
   while(!Oxygen.begin(Oxygen_IICAddress)) {
     delay(300);
   }

@@ -9,8 +9,6 @@ Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ80
 unsigned long int avgValue;
 int buf[10], temp;
 
-LiquidCrystal_I2C lcd(0x27,16,2); 
-
 void setup(){
   Serial.begin(9600);
   pixels.begin();
