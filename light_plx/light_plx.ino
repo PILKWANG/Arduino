@@ -17,4 +17,5 @@ void loop() {
   Serial.print(count*1);
   Serial.print(",");
   Serial.println(val,1);
+  delay(300);
 }
