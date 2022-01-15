@@ -1,8 +1,12 @@
+int  R = 9;
+int  G = 10;
+int  B = 11;
+
 void setup() {
-Serial.begin(9600);
-pinMode(6, OUTPUT);
-pinMode(3, OUTPUT);
-pinMode(5, OUTPUT);
+  Serial.begin(9600);
+  pinMode(R, OUTPUT);
+  pinMode(G, OUTPUT);
+  pinMode(B, OUTPUT);
 
 }
 
@@ -11,24 +15,24 @@ void loop() {
 while (Serial.available() >0) {
   char c = Serial.read();
   if(c=='r') {
-    digitalWrite(3, HIGH);
+    digitalWrite(R, HIGH);
   }
   else if (c == 'a'){
-    digitalWrite(3, LOW);
+    digitalWrite(R, LOW);
   }
 
   if(c=='g') {
-    digitalWrite(5, HIGH);
+    digitalWrite(G, HIGH);
   }
   else if (c == 'a'){
-    digitalWrite(5, LOW);
+    digitalWrite(G, LOW);
   }
 
   if(c=='b') {
-    digitalWrite(6, HIGH);
+    digitalWrite(B, HIGH);
   }
   else if (c == 'a'){
-    digitalWrite(6, LOW);
+    digitalWrite(B, LOW);
   }
 }
 }
