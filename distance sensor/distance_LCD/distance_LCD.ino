@@ -1,12 +1,17 @@
+#include<LiquidCrystal_I2C.h>
+#include<Wire.h>
+
+LiquidCrystal_I2C lcd(0x27,16,2); 
+
 int echoPin = 12;
 int trigPin = 13;
-int count=0;
 
 void setup() {
-  Serial.begin(9600);
-  Serial.println("CLEARDATA");
-  Serial.println("LABEL, TIME, time, distance(cm), distance(mm), distance(m)");
-  
+ Serial.begin(9600);
+    lcd.begin(16,2);
+    lcd.clear();
+    lcd.init();
+    lcd.backlight();
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
 }
@@ -20,16 +25,10 @@ void loop() {
   duration = pulseIn(echoPin, HIGH); 
   distance = ((float)(340 * duration) / 10000) / 2;  
 
-  count ++;
-  Serial.print("DATA, TIME, ");
-  Serial.print(count*1);
-  Serial.print(",");
-  Serial.print(distance);
-  Serial.print(",");
-  Serial.print(distance*10);
-  Serial.print(",");
-  Serial.println(distance/100);
-  
-  
+  lcd.setCursor(0,0);
+  lcd.print("Distance:");
+  lcd.setCursor(10,0);
+  lcd.print(distance,2);
+    
   delay(500);
 }
