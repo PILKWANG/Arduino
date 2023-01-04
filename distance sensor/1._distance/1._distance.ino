@@ -1,20 +1,22 @@
-#include "DHT.h"
-#define DHTPIN 2
-#define DHTTYPE DHT11
-DHT dht(DHTPIN, DHTTYPE);
+int echoPin = 12;
+int trigPin = 13;
 
 void setup() {
   Serial.begin(9600);
-  dht.begin();
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
 }
+
 void loop() {
+  float duration, distance;
+  digitalWrite(trigPin, HIGH);
+  delay(10);
+  digitalWrite(trigPin, LOW);
+    
+  duration = pulseIn(echoPin, HIGH); 
+  distance = ((float)(340 * duration) / 10000) / 2;  
+
+  Serial.println(distance);
+
   delay(1000);
-  int h = dht.readHumidity();
-  int t = dht.readTemperature();
-  Serial.print("Humidity: ");
-  Serial.print(h);
-  Serial.print(" %\t");
-  Serial.print("Temperature: ");
-  Serial.print(t);
-  Serial.println(" ºC");
 }
