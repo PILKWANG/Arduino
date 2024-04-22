@@ -19,4 +19,3 @@ void loop() {
       delay(DELAYVAL);}
             
     }
-    
