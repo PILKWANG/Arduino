@@ -16,7 +16,7 @@ void setup()
 
 void loop()
 {
-  float oxygenData = Oxygen.ReadOxygenData(COLLECT_NUMBER);
+  float oxygenData = Oxygen.getOxygenData(COLLECT_NUMBER);
   Serial.print(" Oxygen concentration is ");
   Serial.print(oxygenData);
   Serial.println(" %vol");

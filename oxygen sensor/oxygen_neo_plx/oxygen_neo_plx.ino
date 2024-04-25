@@ -25,7 +25,7 @@ void setup()
 
 void loop()
 {
-  float oxygenData = Oxygen.ReadOxygenData(COLLECT_NUMBER);
+  float oxygenData = Oxygen.getOxygenData(COLLECT_NUMBER);
   count ++;
   Serial.print("DATA, TIME, ");
   Serial.print(count*1);
