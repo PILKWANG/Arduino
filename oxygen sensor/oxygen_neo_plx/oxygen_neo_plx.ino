@@ -3,6 +3,8 @@
 #define PIN 6 
 #define NUMPIXELS 30
 #define BRIGHTNESS 200
+#define DELAY 500
+unsigned long previousMillis = 0;
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 DFRobot_OxygenSensor Oxygen;
 
@@ -26,12 +28,16 @@ void setup()
 void loop()
 {
   float oxygenData = Oxygen.getOxygenData(COLLECT_NUMBER);
+  unsigned long currentMillis = millis();
+
+ if (currentMillis-previousMillis>=DELAY){
+  previousMillis=currentMillis;
   count ++;
   Serial.print("DATA, TIME, ");
-  Serial.print(count*1);
+  Serial.print(count*DELAY*0.001);
   Serial.print(",");
-  Serial.println(oxygenData);
-  delay(300);
+  Serial.println(oxygenData);}
+  
 
   if (oxygenData < 15){
     for(int i=0; i<NUMPIXELS; i++) { 

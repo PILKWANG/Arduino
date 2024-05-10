@@ -28,5 +28,5 @@ void loop()
   Serial.print("DATA, TIME, ");
   Serial.print(count*DELAY*0.001);
   Serial.print(",");
-  Serial.println(oxygenData);}
+  Serial.println(oxygenData*100);}
 }
