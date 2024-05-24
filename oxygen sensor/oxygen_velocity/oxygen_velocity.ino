@@ -14,7 +14,7 @@ void setup()
     delay(300);
   }
   Serial.println("CLEARDATA");
-  Serial.println("LABEL, TIME, time, Oxygen(%vol)");
+  Serial.println("LABEL, TIME, time, Oxygen Concentration");
 }
 
 void loop()
