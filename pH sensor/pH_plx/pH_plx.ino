@@ -10,7 +10,9 @@ void setup() {
  }
 
 void loop() {
-    
+
+count ++;
+
 int sensorvalue = analogRead(pHsensor);
 float voltage=(float)sensorvalue*0.5/1024;
 float pHvalue=(voltage*35)+OFFSET;
