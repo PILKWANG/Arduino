@@ -11,7 +11,8 @@ void setup()
 {
     Serial.begin(9600);  
     ph.begin();
-    
+    Serial.println("CLEARDATA");
+    Serial.println("LABEL, TIME, tem, pH");
 }
 
 void loop()
@@ -21,10 +22,11 @@ void loop()
         previousMillis=currentMillis;
         voltage = analogRead(PH_PIN)/1024.0*5000;  // read the voltage
         phValue = ph.readPH(voltage,temperature);  // convert voltage to pH with temperature compensation
-         Serial.print("temperature:");
+        Serial.print("DATA, TIME, ");
         Serial.print(temperature,1);
-        Serial.print("^C  pH:");
+        Serial.print(",");
         Serial.println(phValue,2);
     }
-  ph.calibration(voltage,temperature);          // calibration process by Serail CMD
+    ph.calibration(voltage,temperature);           // calibration process by Serail CMD
 }
+

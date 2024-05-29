@@ -26,5 +26,24 @@ void loop()
         Serial.print("^C  pH:");
         Serial.println(phValue,2);
     }
-  ph.calibration(voltage,temperature);          // calibration process by Serail CMD
+  ph.calibration(voltage,temperature);           // calibration process by Serail CMD
+  
+  if (pHvalue < 6.0){
+    for(int i=0; i<NUMPIXELS; i++) { 
+    pixels.setPixelColor(i, pixels.Color(255, 255, 0));
+    pixels.show();
+  }}
+  else if (pHvalue < 7.6){
+    for(int i=0; i<NUMPIXELS; i++) { 
+    pixels.setPixelColor(i, pixels.Color(0, 255, 0));
+    pixels.show();
+  }}
+  else
+  {
+    for(int i=0; i<NUMPIXELS; i++) { 
+    pixels.setPixelColor(i, pixels.Color(0, 0, 255));
+    pixels.show();
+  }}
+    
 }
+
