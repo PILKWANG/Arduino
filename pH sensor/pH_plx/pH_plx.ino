@@ -1,6 +1,9 @@
 #define SensorPin 0
 #define OFFSET 0.00
 
+unsigned long int avgValue;
+int buf[10], temp;
+
 int count=0;
 
 void setup() {
